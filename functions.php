@@ -88,12 +88,12 @@ function motif_setup() {
 	// Post thumbnails
 	set_post_thumbnail_size( 705, 435, true );
 	// Hero Image on the front page template
-	add_image_size( 'motif-hero-thumbnail', 1140, 610, true );
+	add_image_size( 'motif-hero-thumbnail', 1072, 435, true );
 	// Full width and grid page template
 	add_image_size( 'motif-page-thumbnail', 1072, 435, true );
 	// Grid child page thumbnail
 	add_image_size( 'motif-grid-thumbnail', 334, 233, true );
-	// Testimonial thumbnail
+	// Testimonial thumbnail 370 x 255
 	add_image_size( 'motif-testimonial-thumbnail', 90, 90, true );
 
 	/**
@@ -255,6 +255,18 @@ require get_template_directory() . '/inc/customizer.php';
  * Custom Header features.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom Post Types
+ */
+require get_template_directory() . '/inc/custom-post-types/class-hlc-post-type.php';
+require get_template_directory() . '/inc/custom-post-types/class-hlc-home-content.php';
+
+/**
+ * Custom Fields
+ */
+ require get_template_directory() . '/inc/custom-fields/cf-home-content-block.php';
+
 
 /**
  * Load Jetpack compatibility file.

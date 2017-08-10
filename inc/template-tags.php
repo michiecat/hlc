@@ -173,6 +173,58 @@ function motif_get_link_url() {
 }
 endif; // motif_get_link_url
 
+if ( ! function_exists( 'freersackler_home_block' ) ) :
+/**
+ * Outputs each block of content on the home page.
+ */
+function hlc_home_block( $block_num ) {
+	$block_args = array(
+		'post_type'      => 'homecontent',
+		'meta_key'       => 'homecontent_location',
+		'meta_value'     => $block_num,
+		'posts_per_page' => 1,
+	);
+	$block_query = new WP_Query(  $block_args );
+	if( $block_query->have_posts() ) : while ( $block_query->have_posts() ) : $block_query->the_post();
+		$blockContent = get_post_meta( get_the_ID(), 'homecontent_block', true ); ?>
+
+		<article class="child-page hentry">
+			<div class="entry-thumbnail">
+				<?php if ( '' !== $blockContent['block_url'] ) {
+					echo '<a href="' . esc_url( $blockContent['block_url'] ) . '">';
+				}
+				the_post_thumbnail( 'motif-grid-thumbnail' );
+				if ( '' !== $blockContent['block_url'] ) {
+					echo '</a>';
+				} ?>
+			</div><!-- .entry-thumbnail -->
+
+			<div class="entry-header">
+				<h1 class="entry-title">
+					<?php if ( '' !== $blockContent['block_url'] ) {
+						echo '<a href="' . esc_url( $blockContent['block_url'] ) . '">';
+					}
+						the_title();
+					if ( '' !== $blockContent['block_url'] ) {
+						echo '</a>';
+					} ?>
+				</h1>
+			</div><!-- .entry-header -->
+
+			<div class="entry-summary">
+				<?php echo wp_kses_post( $blockContent['block_text'] ); ?>
+			</div><!-- .entry-summary -->
+
+		</article>
+	<?php
+		endwhile;
+		endif;
+		wp_reset_postdata();
+	?>
+
+<?php }
+endif;
+
 /**
  * Returns true if a blog has more than 1 category
  */

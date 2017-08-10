@@ -40,31 +40,24 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
+
 	</div><!-- #primary -->
 
-	<?php get_sidebar( 'front-page' ); ?>
+	<div class="grid-page-content-area full-width">
+		<div class="child-pages grid">
+			<div class="grid-row">
+				<?php hlc_home_block( 'block-1' ); ?>
+				<?php hlc_home_block( 'block-2' ); ?>
+				<?php hlc_home_block( 'block-3' ); ?>
+			</div><!-- .grid-row -->
 
-	<?php
-		$testimonials = new WP_Query( array(
-			'post_type'      => 'jetpack-testimonial',
-			'orderby'        => 'rand',
-			'posts_per_page' => 2,
-			'no_found_rows'  => true,
-		) );
-	?>
-
-	<?php if ( $testimonials->have_posts() ) : ?>
-	<div id="front-page-testimonials" class="front-testimonials testimonials">
-		<div class="grid-row">
-		<?php
-			while ( $testimonials->have_posts() ) : $testimonials->the_post();
-				 get_template_part( 'content', 'testimonial' );
-			endwhile;
-			wp_reset_postdata();
-		?>
-		</div>
-	</div><!-- .testimonials -->
-	<?php endif; ?>
+			<div class="grid-row">
+				<?php hlc_home_block( 'block-4' ); ?>
+				<?php hlc_home_block( 'block-5' ); ?>
+				<?php hlc_home_block( 'block-6' ); ?>
+			</div><!-- .grid-row -->
+		</div><!-- .child-pages grid -->
+	</div>
 
 <?php get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>
