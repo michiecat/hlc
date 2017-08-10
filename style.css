@@ -690,6 +690,52 @@ a:active {
 .entry-title a:hover {
 	color: #999;
 }
+
+
+/* Entry Headers & Titles with Post Thumbnails */
+.page-template-full-width-page .has-post-thumbnail,
+.page-template-full-width-page .has-post-thumbnail .entry-thumbnail {
+	position: relative;
+}
+
+.page-template-full-width-page .has-post-thumbnail .entry-thumbnail {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.page-template-full-width-page .has-post-thumbnail .entry-thumbnail-inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.page-template-full-width-page .has-post-thumbnail .entry-thumbnail img {
+	display: block;
+}
+
+.page-template-full-width-page .has-post-thumbnail .entry-header {
+	background: transparent;
+	position: absolute;
+	z-index: 2;
+}
+
+.page-template-full-width-page .has-post-thumbnail .entry-header .entry-subtitle {
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+}
+
+.page-template-full-width-page .has-post-thumbnail .entry-thumbnail:before {
+	background-color: rgba( 0, 0, 0, 0.3 );
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 1;
+}
+
+
 .entry-meta {
 	color: #aaa;
 	font-size: 11px;

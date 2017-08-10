@@ -7,20 +7,35 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
 
-	<?php if ( '' != get_the_post_thumbnail() ) : ?>
-	<div class="entry-thumbnail">
-		<?php
-			if ( is_page_template( 'page-templates/full-width-page.php' ) || is_page_template( 'page-templates/grid-page.php' ) ) :
-				the_post_thumbnail( 'motif-page-thumbnail' );
-			else :
-				the_post_thumbnail();
-			endif;
-		?>
-	</div>
+	<?php if ( '' == get_the_post_thumbnail() ) : ?>
+		<header class="entry-header">
+			<h1 class="entry-title">
+				<?php the_title(); ?>
+			</h1>
+		</header>
+
+	<?php else: ?>
+		<div class="entry-thumbnail">
+			<div class="entry-thumbnail-inner">
+				<header class="entry-header">
+					<h1 class="entry-subtitle">
+						<?php
+							if ( function_exists( 'the_subtitle' ) ) {
+								the_subtitle();
+						} ?>
+					</h1>
+				</header><!-- .entry-header -->
+
+				<?php
+					if ( is_page_template( 'page-templates/full-width-page.php' ) || is_page_template( 'page-templates/grid-page.php' ) ) :
+						the_post_thumbnail( 'motif-page-thumbnail' );
+					else :
+						the_post_thumbnail();
+					endif;
+				?>
+			</div><!-- .entry-thumbnail-inner -->
+		</div><!-- .entry-thumbnail -->
 	<?php endif; ?>
 
 	<div class="entry-content">
