@@ -273,9 +273,9 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: #f9f9f9;
-	border: 1px solid #e6e6e6;
-	color: #ea2e25;
+	background-color: #e88639;
+	border: none;
+	color: #fff;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	font-size: 13px;
 	font-size: 1rem;
@@ -288,7 +288,7 @@ button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: #ea2e25;
+	background-color: #c06621;
 	color: #fff;
 }
 button:focus,
@@ -299,8 +299,7 @@ button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	background-color: #e6e6e6;
-	color: #666;
+	background-color: #ad6229;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -339,7 +338,7 @@ input[type="url"] {
 .widget input[type="password"],
 .widget input[type="search"],
 .widget input[type="url"] {
-	background-color: #efefef;
+	background-color: #f4f3f2;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -694,34 +693,18 @@ a:active {
 
 /* Entry Headers & Titles with Post Thumbnails */
 .page-template-full-width-page .has-post-thumbnail,
-.page-template-full-width-page .has-post-thumbnail .entry-thumbnail {
+.page-template-full-width-page .has-post-thumbnail .entry-thumbnail,
+.page-template-full-width-page .has-post-thumbnail .entry-thumbnail-inner {
 	position: relative;
 }
 
+.page-template-full-width-page .has-post-thumbnail {
+	word-wrap: normal;
+}
+
 .page-template-full-width-page .has-post-thumbnail .entry-thumbnail {
-	display: table;
-	height: 100%;
 	width: 100%;
-}
-
-.page-template-full-width-page .has-post-thumbnail .entry-thumbnail-inner {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.page-template-full-width-page .has-post-thumbnail .entry-thumbnail img {
-	display: block;
-}
-
-.page-template-full-width-page .has-post-thumbnail .entry-header {
-	background: transparent;
-	position: absolute;
-	z-index: 2;
-}
-
-.page-template-full-width-page .has-post-thumbnail .entry-header .entry-subtitle {
-	color: #fff;
-	text-shadow: 1px 1px 1px #000;
+	height: 100%;
 }
 
 .page-template-full-width-page .has-post-thumbnail .entry-thumbnail:before {
@@ -735,7 +718,32 @@ a:active {
 	z-index: 1;
 }
 
+.page-template-full-width-page .has-post-thumbnail .entry-header {
+	background: transparent;
+	width: 60%;
+	height: 75%;
+	min-width: 200px;
+	max-width: 400px;
+	margin: auto;
+	left: 0;
+	right: auto;
+	overflow: hidden;
+	position: absolute;
+	z-index: 2;
+}
 
+.page-template-full-width-page .has-post-thumbnail .entry-thumbnail img {
+	display: block;
+}
+
+.page-template-full-width-page .has-post-thumbnail .entry-header .entry-subtitle {
+	color: #fff;
+	font-size: 45px;
+	line-height: 1.1;
+	padding-top: 20%;
+	text-shadow: 1px 1px 1px #000;
+	text-transform: uppercase;
+}
 .entry-meta {
 	color: #aaa;
 	font-size: 11px;
@@ -1159,9 +1167,9 @@ object {
 	overflow: hidden;
 }
 .widget-title {
-	font-family: "Droid Serif", serif;
-	font-size: 21px;
-	font-size: 1.6153rem;
+	font-size: 15px;
+	font-size: 1.15rem;
+	font-weight: 700;
 	margin-bottom: 1rem;
 }
 .widget ul,
@@ -1243,8 +1251,7 @@ object {
 ----------------------------------------------- */
 
 .footer-widget-area {
-	background-color: #2e2e2e;
-	color: #979797;
+	background-color: #fff;
 	font-size: 14px;
 	font-size: 1.0769rem;
 	padding: 24px;
@@ -1257,8 +1264,11 @@ object {
 .second.footer-widgets {
 	margin-right: 34px;
 }
+
 .footer-widget-area .widget-title {
-	color: #fff;
+	border-bottom: 1px solid #e88639;
+	color: #e88639;
+	padding-bottom: 0.2em;
 }
 .footer-widget-area .widget ul > li,
 .footer-widget-area .widget ol > li {
@@ -1277,20 +1287,63 @@ object {
 .footer-widget-area .widget_calendar td {
 	border-color: #444;
 }
+.footer-widget-area .address-widget p {
+	font-size: 12px;
+	font-size: 0.92rem;
+    float: left;
+    margin-top: 2em;
+    text-align: right;
+    width: 54%;
+}
+.footer-widget-area .address-widget .footer-logo {
+	display: inline-block;
+	float: right;
+	width: 35%;
+}
+.footer-widget-area input[type="submit"] {
+	line-height: normal;
+	padding-top: 0.61em;
+	padding-bottom: 0.61em;
+	border-radius: 0 10px 10px 0;
+	text-transform: none;
+}
+.footer-widget-area .widget_wpcom_social_media_icons_widget ul > li {
+	border: none;
+}
+.footer-widget-area .widget_wpcom_social_media_icons_widget .genericon {
+	background: #000;
+    border-radius: 50px;
+    padding: 0.5em;
+}
+.footer-widget-area .widget_wpcom_social_media_icons_widget li a:hover {
+	text-decoration: none;
+}
+.footer-widget-area .widget_wpcom_social_media_icons_widget .genericon-facebook {
+	background-color: #3b5998;
+
+}
+.footer-widget-area .widget_wpcom_social_media_icons_widget .genericon-twitter {
+	background-color: #2aa3f0;
+}
+
+.footer-widget-area .widget_wpcom_social_media_icons_widget .genericon-facebook:before {
+	content: "\f204";
+}
+
 
 /* =Footer
 ----------------------------------------------- */
 
 .footer-navbar {
-	background-color: #e4e4e4;
+	background-color: #fff;
 	padding: 24px 34px 0 34px;
 }
 .site-info {
-	background-color: #e4e4e4;
+	background-color: #fff;
 	color: #999;
 	font-size: 10px;
 	font-size: 0.7692rem;
-	padding: 24px 34px 24px 34px;
+	padding: 0 34px 24px 34px;
 	text-transform: uppercase;
 }
 .site-info a {
@@ -1629,7 +1682,7 @@ object {
 		margin-bottom: 34px;
 	}
 	.footer-widget-area {
-		padding: 34px;
+		padding: 34px 34px 0;
 	}
 	.footer-widgets {
 		width: 320px;
@@ -1717,6 +1770,19 @@ object {
 	.first.footer-widgets,
 	.second.footer-widgets {
 		margin-right: 5.1305970149253734%;
+	}
+}
+
+@media screen and (min-width: 1010px) {
+	.page-template-full-width-page .has-post-thumbnail .entry-header .entry-subtitle {
+		font-size: 50px;
+		padding-top: 23%;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.page-template-full-width-page .has-post-thumbnail .entry-header .entry-subtitle {
+		padding-top: 0;
 	}
 }
 
@@ -1867,6 +1933,13 @@ object {
 	}
 	.site-logo {
 		margin: 0 auto 12px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.page-template-full-width-page .has-post-thumbnail .entry-header .entry-subtitle {
+		font-size: 25px;
+		padding-top: 5%;
 	}
 }
 

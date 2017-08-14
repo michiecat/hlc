@@ -18,14 +18,14 @@
 	<?php else: ?>
 		<div class="entry-thumbnail">
 			<div class="entry-thumbnail-inner">
-				<header class="entry-header">
+				<div class="entry-header">
 					<h1 class="entry-subtitle">
 						<?php
 							if ( function_exists( 'the_subtitle' ) ) {
 								the_subtitle();
 						} ?>
 					</h1>
-				</header><!-- .entry-header -->
+				</div><!-- .entry-header -->
 
 				<?php
 					if ( is_page_template( 'page-templates/full-width-page.php' ) || is_page_template( 'page-templates/grid-page.php' ) ) :
