@@ -36,6 +36,10 @@
 					<?php if ( '' != get_bloginfo( 'description' ) ) : ?>
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 					<?php endif; ?>
+
+					<div class="donate-button">
+						<a href="http://donate.com/"><span><?php _e( 'Donate', 'hlc' ); ?></span></a>
+					</div><!-- .donate-button-->
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">

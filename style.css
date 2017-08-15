@@ -631,6 +631,7 @@ a:active {
 ----------------------------------------------- */
 .site-branding {
 	padding: 24px;
+	position: relative;
 }
 .site-branding a {
 	display: inline-block;
@@ -656,6 +657,24 @@ a:active {
 	line-height: 1;
 	margin: 10px 0 0 0;
 }
+.donate-button {
+	position: absolute;
+    right: 0;
+    bottom: 10%;
+}
+.donate-button a {
+	background: #e78539;
+	color: #fff;
+	display: block;
+	font-size: 1.2rem;
+	font-weight: 700;
+	padding: 0.7em 1.5em;
+	text-transform: uppercase;
+}
+.donate-button a:hover {
+	text-decoration: none;
+}
+
 
 /* =Content
 ----------------------------------------------- */
@@ -1548,8 +1567,15 @@ object {
 	margin: 0 0 0 24px;
 	width: 297px;
 }
+.blocks-2 .child-page {
+	width: 457px;
+}
+.blocks-1 .child-page {
+	width: 97%;
+}
 .child-page .entry-thumbnail img {
    display: block;
+   width: 100%;
 }
 
 /* =Jetpack
@@ -1678,6 +1704,12 @@ object {
 		width: 334px;
 		margin-left: 35px;
 	}
+	.blocks-2 .child-page {
+		width: 518px;
+	}
+	.blocks-1 .child-page {
+		width: 96%;
+	}
 	.widget {
 		margin-bottom: 34px;
 	}
@@ -1760,6 +1792,9 @@ object {
 	.child-page {
 		margin-left: 2.49221184%;
 		width: 30.8411215%;
+	}
+	.blocks-2 .child-page {
+		width: 47%;
 	}
 	.footer-widget-area {
 		padding: 2.982456140350877%;
@@ -1852,6 +1887,9 @@ object {
 	.site-branding {
 		text-align: center;
 	}
+	.donate-button {
+		position: relative;
+	}
 	.menu-toggle {
 		color: #fff;
 		display: block;
@@ -1929,6 +1967,10 @@ object {
 		float: none;
 		margin: 0 auto 24px auto;
 		max-width: 334px;
+		width: auto;
+	}
+	.blocks-2 .child-page,
+	.blocks-1 .child-page {
 		width: auto;
 	}
 	.site-logo {

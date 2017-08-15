@@ -173,7 +173,27 @@ function motif_get_link_url() {
 }
 endif; // motif_get_link_url
 
-if ( ! function_exists( 'freersackler_home_block' ) ) :
+
+function hlc_home_block_count( $first, $second, $third ) {
+	$count = 0;
+
+	$block_params = array(
+		'post_type'      => 'homecontent',
+		'meta_key'       => 'homecontent_location',
+		'meta_value'   => array( $first, $second, $third ),
+	);
+	$block_count = new WP_Query(  $block_params );
+	if( $block_count->have_posts() ) : while ( $block_count->have_posts() ) : $block_count->the_post();
+
+		if ( get_post_meta( get_the_ID(), 'homecontent_location', false ) ) {
+			$count++;
+		}
+		endwhile;
+		endif;
+		return $count;
+}
+
+if ( ! function_exists( 'hlc_home_block' ) ) :
 /**
  * Outputs each block of content on the home page.
  */
@@ -220,6 +240,8 @@ function hlc_home_block( $block_num ) {
 		endwhile;
 		endif;
 		wp_reset_postdata();
+
+		return true;
 	?>
 
 <?php }

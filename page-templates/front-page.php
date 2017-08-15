@@ -38,24 +38,29 @@ get_header(); ?>
 
 			</div>
 
-		<?php endwhile; ?>
+		<?php endwhile;
 
+		?>
 
 	</div><!-- #primary -->
 
 	<div class="grid-page-content-area full-width">
 		<div class="child-pages grid">
-			<div class="grid-row">
+		<?php if ( 0 !== hlc_home_block_count( 'block-1', 'block-2', 'block-3' ) ) : ?>
+			<div class="grid-row blocks-<?php echo hlc_home_block_count( 'block-1', 'block-2', 'block-3' ); ?>">
 				<?php hlc_home_block( 'block-1' ); ?>
 				<?php hlc_home_block( 'block-2' ); ?>
 				<?php hlc_home_block( 'block-3' ); ?>
 			</div><!-- .grid-row -->
+		<?php endif; ?>
 
-			<div class="grid-row">
+		<?php if ( 0 !== hlc_home_block_count( 'block-4', 'block-5', 'block-6' ) ) : ?>
+			<div class="grid-row blocks-<?php echo hlc_home_block_count( 'block-4', 'block-5', 'block-6' ); ?>">
 				<?php hlc_home_block( 'block-4' ); ?>
 				<?php hlc_home_block( 'block-5' ); ?>
 				<?php hlc_home_block( 'block-6' ); ?>
 			</div><!-- .grid-row -->
+		<?php endif; ?>
 		</div><!-- .child-pages grid -->
 	</div>
 
